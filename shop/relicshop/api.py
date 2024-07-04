@@ -106,7 +106,7 @@ class HandleShop(APIView):
             temp = models.ShopModel(
                 name=request_data['name'],
                 idCity_id=request_data['idCity_id'],
-                city=models.CityModel.objects.get(id=request_data['idStreet_id']).name,
+                city=models.CityModel.objects.get(id=request_data['idCity_id']).name,
                 idStreet_id=request_data['idStreet_id'],
                 street=models.StreetModel.objects.get(id=request_data['idStreet_id']).name,
                 building=request_data['building'],
@@ -115,5 +115,6 @@ class HandleShop(APIView):
             )
             temp.save()
             return Response(f"id: {temp.id}", status=200)
-        except Exception:
+        except Exception as e:
+            print(e)
             return Response(None, status=400)
