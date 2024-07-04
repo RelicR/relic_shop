@@ -15,7 +15,7 @@ class CityModel(models.Model):
 
 
 class StreetModel(models.Model):
-    name = models.CharField(max_length=50, verbose_name='Название')
+    name = models.CharField(max_length=63, verbose_name='Название')
     city = models.CharField(max_length=50, verbose_name='Город')
     idCity = models.ForeignKey(CityModel, on_delete=models.CASCADE, default=0)
 
@@ -31,7 +31,7 @@ class StreetModel(models.Model):
 class ShopModel(models.Model):
     name = models.CharField(max_length=50, verbose_name='Название')
     city = models.CharField(max_length=50, verbose_name='Город')
-    street = models.CharField(max_length=50, verbose_name='Улица')
+    street = models.CharField(max_length=63, verbose_name='Улица')
     building = models.CharField(max_length=7,
                                 verbose_name='Дом',
                                 validators=[django.core.validators.RegexValidator(regex=r'^\d+[а-яА-Я]?(\/\d+[а-яА-Я]?)?$')])

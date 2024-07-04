@@ -1,0 +1,23 @@
+[
+  {
+    "model": "relicshop.citymodel",
+    "pk": 1,
+    "fields": {
+      "name": "Ульяновск"
+    }
+  },
+  {
+    "model": "relicshop.citymodel",
+    "pk": 2,
+    "fields": {
+      "name": "Самара"
+    }
+  },
+  {
+    "model": "relicshop.citymodel",
+    "pk": 3,
+    "fields": {
+      "name": "Казань"
+    }
+  }
+]
