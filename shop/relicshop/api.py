@@ -115,6 +115,5 @@ class HandleShop(APIView):
             )
             temp.save()
             return Response(f"id: {temp.id}", status=200)
-        except Exception as e:
-            print(e)
+        except Exception:
             return Response(None, status=400)
